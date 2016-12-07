@@ -51,7 +51,7 @@ EOF
 
 
 cat <<- EOF > ~/producer.config
-    metadata.broker.list=$DOWNSTREAM_BROKERS
+    bootstrap.servers=$DOWNSTREAM_BROKERS
 EOF
 
 /bin/ash -C /opt/kafka/bin/kafka-run-class.sh kafka.tools.MirrorMaker \
