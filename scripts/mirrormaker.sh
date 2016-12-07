@@ -8,15 +8,12 @@ if [ -n "$WHITE_LIST" ]; then
     WHITE_LIST="--whitelist $WHITE_LIST"
 fi
 
-if [ -n "$BLACK_LIST" ]; then
-    BLACK_LIST="--blacklist $BLACK_LIST"
-fi
-
 if [ -z "$STREAM_COUNT" ]; then
     STREAM_COUNT=$DEFAULT_STREAMS
 fi
 
 if [ -z "$OFFSET_RESET" ]; then
+    echo "Using default offset reset of largest"
     OFFSET_RESET=$DEFAULT_OFFSET_RESET
 fi
 
@@ -46,7 +43,7 @@ fi
 cat <<- EOF > ~/consumer.config
     zookeeper.connect=$CONSUMER_ZK_CONNECT
     group.id=$CONSUMER_GROUP_ID
-    auto.offset.reset=$CONSUMER_OFFSET_RESET
+    auto.offset.reset=$OFFSET_RESET
 EOF
 
 
@@ -58,7 +55,7 @@ EOF
 --consumer.config ~/consumer.config \
 --producer.config ~/producer.config \
 --num.streams $STREAM_COUNT \
---whitelist $WHITE_LIST \
+$WHITE_LIST \
 # --offset.commit.interval.ms $OFFSET_COMMIT_INTERVAL
 # --abort.on.send.failure $ABORT_ON_FAILURE
 
