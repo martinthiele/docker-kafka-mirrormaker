@@ -1,14 +1,12 @@
 # Docker Kafka MirrorMaker
 Docker container that runs Kafka's MirrorMaker.
 
-Kafka Version: 0.8.2.1
+Kafka Version: 0.9.0.0 (Update Dockerfile for your Kafka Version)
 
 ## Usage
 [The MirrorMaker documentation says](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330):
 
 > Setting up a mirror is easy - simply start up the mirror-maker processes after bringing up the target cluster. At minimum, the mirror maker takes one or more consumer configurations, a producer configuration and either a whitelist or a blacklist. You need to point the consumer to the source cluster's ZooKeeper, and the producer to the mirror cluster's ZooKeeper (or use the broker.list parameter).
-
-
 
 The container expects the following environment variables to be passed in:
 
@@ -32,7 +30,7 @@ The container expects the following environment variables to be passed in:
 ## Limitations
 - Currently only supports a single consumer
 - Does not support message handlers
-- Does not support rebalancers 
+- Does not support rebalancers
 
 ## MirrorMaker Documentation
 https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330

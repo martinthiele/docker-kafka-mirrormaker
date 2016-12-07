@@ -1,6 +1,7 @@
 FROM jeanblanchard/busybox-java:8
 
-ENV KAFKA_RELEASE="http://apache.mirrors.spacedump.net/kafka/0.8.2.1/kafka_2.10-0.8.2.1.tgz"
+ENV KAFKA_VERSION=0.9.0.0
+ENV KAFKA_RELEASE="http://apache.mirrors.spacedump.net/kafka/${KAFKA_VERSION}/kafka_2.10-${KAFKA_VERSION}.tgz"
 ENV KAFKA_FILE="/tmp/kafka.tar.gz"
 
 RUN DEBIAN_FRONTEND="noninteractive" \
