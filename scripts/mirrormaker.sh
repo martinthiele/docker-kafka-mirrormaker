@@ -1,4 +1,3 @@
-DEFAULT_PRODUCERS=1
 DEFAULT_STREAMS=1
 # DEFAULT_OFFSET_COMMIT_INTERVAL=60000
 # DEFAULT_ABORT_ON_FAILURE="true"
@@ -11,10 +10,6 @@ fi
 
 if [ -n "$BLACK_LIST" ]; then
     BLACK_LIST="--blacklist $BLACK_LIST"
-fi
-
-if [ -z "$PRODUCER_COUNT" ]; then
-    PRODUCER_COUNT=$DEFAULT_PRODUCERS
 fi
 
 if [ -z "$STREAM_COUNT" ]; then
@@ -62,10 +57,8 @@ EOF
 /bin/ash -C /opt/kafka/bin/kafka-run-class.sh kafka.tools.MirrorMaker \
 --consumer.config ~/consumer.config \
 --producer.config ~/producer.config \
---num.producers $PRODUCER_COUNT \
 --num.streams $STREAM_COUNT \
-$WHITE_LIST \
-$BLACK_LIST \
+--whitelist $WHITE_LIST \
 # --offset.commit.interval.ms $OFFSET_COMMIT_INTERVAL
 # --abort.on.send.failure $ABORT_ON_FAILURE
 
