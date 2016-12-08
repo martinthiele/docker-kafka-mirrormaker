@@ -1,0 +1,22 @@
+{
+  "id": "kafka-mirrormaker",
+  "env": {
+    "CONSUMER_ZK_CONNECT": "",
+    "DOWNSTREAM_BROKERS": "",
+    "WHITE_LIST": "",
+    "CONSUMER_GROUP_ID": "",
+    "STREAM_COUNT": "",
+    "OFFSET_RESET": ""
+  },
+  "cpus": 0.5,
+  "mem": 256,
+  "instances": 1,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "eodgooch/kafka-mirror:latest",
+      "network": "HOST",
+      "forcePullImage": true
+    }
+  }
+}

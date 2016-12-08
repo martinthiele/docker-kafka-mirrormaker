@@ -13,19 +13,21 @@ The container expects the following environment variables to be passed in:
 * `CONSUMER_ZK_CONNECT` - Zookeeper connection string for source, including port and chroot.
 * `DOWNSTREAM_BROKERS` - Brokers to receive mirrored messages
 * `WHITE_LIST` - (optional) White list of topics, if used, do not use black list
-* `BLACK_LIST` - (optional) Black list of topics, if used, do not use white list
 * `CONSUMER_GROUP_ID` - (optional) Defaults to 1
-* `PRODUCER_COUNT` - (optional) Defaults to 1
 * `STREAM_COUNT` - (optional) Defaults to 1
+* `OFFSET_RESET` - (optional) One of `smallest` or `largest`. Defaults to `largest`
 
 <!-- * `ABORT_ON_FAILURE` - (optional) Kill MirrorMaker on failure. Defaults to true.
 * `OFFSET_COMMIT_INTERVAL` - (optional) Defaults to 60000 -->
 
-### Command
-`docker run -e WHITE_LIST="topic" -e CONSUMER_ZK_CONNECT=localhost:2181/chroot -e DOWNSTREAM_BROKERS=127.0.0.1:9092 sheeley/docker-kafka-mirrormaker`
+## Build
+`docker build -t eodgooch/kafka-mirrormaker .`
 
-## Building
-`docker build -t sheeley/docker-kafka-mirrormaker .`
+## Run
+`docker run -e WHITE_LIST="topic" -e CONSUMER_ZK_CONNECT=localhost:2181/ -e DOWNSTREAM_BROKERS=127.0.0.1:9092 eodgooch/kafka-mirrormaker`
+
+## Run On Mesos via Marathon
+- Configure `marathon-config.json` with the appropriate env variables CPU and RAM depending on number of streams.
 
 ## Limitations
 - Currently only supports a single consumer
