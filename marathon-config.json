@@ -14,7 +14,7 @@
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "martinthiele/kafka-mirror:latest",
+      "image": "martinthiele/kafka-mirrormaker:latest",
       "network": "HOST",
       "forcePullImage": true
     }
