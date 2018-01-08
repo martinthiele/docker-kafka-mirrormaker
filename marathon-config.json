@@ -14,7 +14,7 @@
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "eodgooch/kafka-mirror:latest",
+      "image": "martinthiele/kafka-mirror:latest",
       "network": "HOST",
       "forcePullImage": true
     }
