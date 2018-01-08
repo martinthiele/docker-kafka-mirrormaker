@@ -24,7 +24,7 @@ The container expects the following environment variables to be passed in:
 `docker build -t martinthiele/kafka-mirrormaker .`
 
 ## Run
-`docker run -e WHITE_LIST="topic" -e CONSUMER_ZK_CONNECT=localhost:2181/ -e DOWNSTREAM_BROKERS=127.0.0.1:9092 eodgooch/kafka-mirrormaker`
+`docker run -e WHITE_LIST="topic" -e CONSUMER_ZK_CONNECT=localhost:2181/ -e DOWNSTREAM_BROKERS=127.0.0.1:9092 martinthiele/kafka-mirrormaker`
 
 ## Run On Mesos via Marathon
 - Configure `marathon-config.json` with the appropriate env variables CPU and RAM depending on number of streams.
