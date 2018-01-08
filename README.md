@@ -1,7 +1,7 @@
 # Docker Kafka MirrorMaker
 Docker container that runs Kafka's MirrorMaker.
 
-Kafka Version: 0.9.0.0 (Update Dockerfile for your Kafka Version)
+Kafka Version: 1.0.0 (Update Dockerfile for your Kafka Version)
 
 ## Usage
 [The MirrorMaker documentation says](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330):
@@ -21,7 +21,7 @@ The container expects the following environment variables to be passed in:
 * `OFFSET_COMMIT_INTERVAL` - (optional) Defaults to 60000 -->
 
 ## Build
-`docker build -t eodgooch/kafka-mirrormaker .`
+`docker build -t martinthiele/kafka-mirrormaker .`
 
 ## Run
 `docker run -e WHITE_LIST="topic" -e CONSUMER_ZK_CONNECT=localhost:2181/ -e DOWNSTREAM_BROKERS=127.0.0.1:9092 eodgooch/kafka-mirrormaker`
