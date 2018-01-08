@@ -1,0 +1,22 @@
+{
+  "id": "kafka-mirrormaker",
+  "env": {
+    "CONSUMER_GROUP_ID": "mirrormaker",
+    "CONSUMER_ZK_CONNECT": "master.mesos:2181/dcos-service-confluent-kafka",
+    "STREAM_COUNT": "2",
+    "OFFSET_RESET": "smallest",
+    "WHITE_LIST": "\".*\"",
+    "DOWNSTREAM_BROKERS": "broker.newconfluent-kafka.l4lb.thisdcos.directory:9092"
+  },
+  "cpus": 0.5,
+  "mem": 256,
+  "instances": 1,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "martinthiele/kafka-mirrormaker:latest",
+      "network": "HOST",
+      "forcePullImage": true
+    }
+  }
+}
