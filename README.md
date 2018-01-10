@@ -12,7 +12,7 @@ The container expects the following environment variables to be passed in:
 
 * `CONSUMER_ZK_CONNECT` - Zookeeper connection string for source, including port and chroot.
 * `DOWNSTREAM_BROKERS` - Brokers to receive mirrored messages
-* `WHITE_LIST` - (optional) White list of topics, if used, do not use black list
+* `WHITE_LIST` - (optional) For a partial mirror, you can specify exactly one comma-separated list of topics to include 
 * `CONSUMER_GROUP_ID` - (optional) Defaults to 1
 * `STREAM_COUNT` - (optional) Defaults to 1
 * `OFFSET_RESET` - (optional) One of `smallest` or `largest`. Defaults to `largest`
