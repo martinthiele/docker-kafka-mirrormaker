@@ -51,7 +51,7 @@ cat <<- EOF > ~/producer.config
     bootstrap.servers=$DOWNSTREAM_BROKERS
 EOF
 
-/bin/ash -C /opt/kafka/bin/kafka-run-class.sh kafka.tools.MirrorMaker \
+/bin/bash  /opt/kafka/bin/kafka-run-class.sh kafka.tools.MirrorMaker \
 --consumer.config ~/consumer.config \
 --producer.config ~/producer.config \
 --num.streams $STREAM_COUNT \
