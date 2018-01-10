@@ -1,4 +1,4 @@
-FROM jeanblanchard/java:8
+FROM openjdk:8
 
 ENV KAFKA_VERSION=1.0.0
 ENV KAFKA_RELEASE="http://apache.mirrors.spacedump.net/kafka/${KAFKA_VERSION}/kafka_2.12-${KAFKA_VERSION}.tgz"
