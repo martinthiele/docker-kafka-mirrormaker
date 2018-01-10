@@ -34,5 +34,9 @@ The container expects the following environment variables to be passed in:
 - Does not support message handlers
 - Does not support rebalancers
 
+# License
+
+The project is licensed under the Apache 2 license.
+
 ## MirrorMaker Documentation
 https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330
